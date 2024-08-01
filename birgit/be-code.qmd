@@ -96,4 +96,24 @@ lines(uci[147:172], lty = 2)
 library(rtrim)
 ```
 
+## CWAC
+
+```{r}
+library(CWAC)
+
+# List all sites at the North West province
+nw_sites <- listCwacSites(.region_type = "province", .region = "North West")
+
+# Find the code for Barberspan
+site_id <- nw_sites[nw_sites$LocationName == "Barberspan", "LocationCode", drop = TRUE]
+
+# We can find more info about this site with getCwacSiteInfo()
+getCwacSiteInfo(site_id)
+
+bp_counts <- getCwacSiteCounts(site_id)
+bp_counts
+
+tail(bp_counts)
+
+```
 
