@@ -1,0 +1,99 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{r}
+load("~/GIT/barberspan-ssm/R/data/Barberspan_counts.RData")
+# sum up each bird count row for each year
+b_counts = rowSums(barberspan_counts[3:49], na.rm = T) # sum across rows
+b_counts = as.data.frame(cbind(Year = barberspan_counts$Year,
+                               Season = barberspan_counts$Season,
+                               counts = b_counts)) 
+
+dat <- process_data(b_counts)
+dat
+```
+
+```{r}
+plot(logCounts ~ Year, data = dat, col = as.factor(Season), pch = 20, type = "b")
+legend("bottomright", col = 1:2, legend = levels(as.factor(dat$Season)), pch = 20)
+```
+
+
+### Stan Basics
+
+```{r}
+#| warning: false
+#| message: false
+
+library(cmdstanr)
+library(posterior)
+library(bayesplot)
+
+color_scheme_set("brightblue")
+check_cmdstan_toolchain()
+```
+
+```{r}
+summer <- dat[which(dat$Season == 'S'),]
+winter <- dat[which(dat$Season == 'W'),]
+
+s.obs = na.omit(summer$logCounts)
+Nobs = length(na.omit(summer$logCounts))
+Nmiss = sum(is.na(summer$logCounts))
+ii_obs = which(!is.na(summer$logCounts))
+ii_mis = which(is.na(summer$logCounts))
+
+data_list <- list(summer = s.obs,  
+                  Nobs = Nobs,
+                  Nmiss = Nmiss, 
+                  ii_obs = ii_obs,
+                  ii_mis = ii_mis)
+```
+
+
+```{r}
+mod <- cmdstan_model("ssm.stan")
+mod <- cmdstan_model("ssm.stan")
+
+fit <- mod$sample(
+  data = data_list,
+  chains = 3,
+  refresh = 500 # print update every 500 iters
+)
+
+fit$summary()
+```
+
+
+
+
+```{r}
+draws <- fit$draws(format = "df")
+pairs(draws[,2:7], pch = 20)
+
+names(draws)
+```
+```{r}
+# mu: 147:172
+
+par.means <- apply(draws, 2, mean)
+lci <- apply(draws, 2, quantile, prob = 0.025)
+uci <- apply(draws, 2, quantile, prob = 0.975)
+
+mu.means <- par.means[147:172] 
+
+plot(mu.means, type = "l", ylim = c(7, 11))
+points(summer$logCounts)
+lines(lci[147:172], lty = 2)
+lines(uci[147:172], lty = 2)
+```
+
+# RTRIM
+
+```{r}
+library(rtrim)
+```
+
+
