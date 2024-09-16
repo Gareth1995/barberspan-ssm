@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.24)  29 JUL 2024 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.24)  16 SEP 2024 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,109 +482,109 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 109.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 149.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 149.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 149.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 149.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 149.
+(Font)              <10.95> on input line 164.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 149.
+(Font)              <8> on input line 164.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 149.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 149.
+(Font)              <6> on input line 164.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 149.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 164.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [2{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3]
-<img/The-state-space-model.png, id=44, 755.82375pt x 354.32375pt>
+<img/The-state-space-model.png, id=42, 755.82375pt x 354.32375pt>
 File: img/The-state-space-model.png Graphic file (type png)
 <use img/The-state-space-model.png>
-Package pdftex.def Info: img/The-state-space-model.png  used on input line 292.
+Package pdftex.def Info: img/The-state-space-model.png  used on input line 307.
 (pdftex.def)             Requested size: 284.52884pt x 133.38469pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 293.
+(Font)              <10> on input line 308.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 293.
+(Font)              <7> on input line 308.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 293.
-[4 <./img/The-state-space-model.png>] [5] [6]
-<img/barberspan_count_plot.png, id=70, 526.96875pt x 325.215pt>
+(Font)              <5> on input line 308.
+[4 <./img/The-state-space-model.png>] [5] [6] [7]
+<img/barberspan_count_plot.png, id=78, 526.96875pt x 325.215pt>
 File: img/barberspan_count_plot.png Graphic file (type png)
 <use img/barberspan_count_plot.png>
-Package pdftex.def Info: img/barberspan_count_plot.png  used on input line 474.
+Package pdftex.def Info: img/barberspan_count_plot.png  used on input line 489.
 (pdftex.def)             Requested size: 486.28056pt x 300.10458pt.
-[7]
-<img/top_10_abundant_waterbirds.png, id=80, 526.8483pt x 325.215pt>
+<img/top_10_abundant_waterbirds.png, id=79, 526.8483pt x 325.215pt>
 File: img/top_10_abundant_waterbirds.png Graphic file (type png)
 <use img/top_10_abundant_waterbirds.png>
-Package pdftex.def Info: img/top_10_abundant_waterbirds.png  used on input line 480.
+Package pdftex.def Info: img/top_10_abundant_waterbirds.png  used on input line 495.
 (pdftex.def)             Requested size: 486.25786pt x 300.15916pt.
-[8 <./img/barberspan_count_plot.png> <./img/top_10_abundant_waterbirds.png>]
-<img/ssm_summer_counts.png, id=88, 526.96875pt x 325.215pt>
+[8 <./img/barberspan_count_plot.png>]
+<img/ssm_summer_counts.png, id=87, 526.96875pt x 325.215pt>
 File: img/ssm_summer_counts.png Graphic file (type png)
 <use img/ssm_summer_counts.png>
-Package pdftex.def Info: img/ssm_summer_counts.png  used on input line 495.
+Package pdftex.def Info: img/ssm_summer_counts.png  used on input line 510.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-<img/ssm_winter_counts.png, id=89, 526.96875pt x 325.215pt>
+<img/ssm_winter_counts.png, id=88, 526.96875pt x 325.215pt>
 File: img/ssm_winter_counts.png Graphic file (type png)
 <use img/ssm_winter_counts.png>
-Package pdftex.def Info: img/ssm_winter_counts.png  used on input line 500.
+Package pdftex.def Info: img/ssm_winter_counts.png  used on input line 515.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-<img/summer_lpi.png, id=90, 526.96875pt x 325.215pt>
+[9 <./img/top_10_abundant_waterbirds.png>]
+<img/summer_lpi.png, id=94, 526.96875pt x 325.215pt>
 File: img/summer_lpi.png Graphic file (type png)
 <use img/summer_lpi.png>
-Package pdftex.def Info: img/summer_lpi.png  used on input line 519.
+Package pdftex.def Info: img/summer_lpi.png  used on input line 534.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-<img/winter_lpi.png, id=91, 526.96875pt x 325.215pt>
+<img/winter_lpi.png, id=95, 526.96875pt x 325.215pt>
 File: img/winter_lpi.png Graphic file (type png)
 <use img/winter_lpi.png>
-Package pdftex.def Info: img/winter_lpi.png  used on input line 524.
+Package pdftex.def Info: img/winter_lpi.png  used on input line 539.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-[9 <./img/ssm_summer_counts.png> <./img/ssm_winter_counts.png>]
-<img/shannon_index_summer.png, id=99, 526.96875pt x 325.215pt>
+[10 <./img/ssm_summer_counts.png> <./img/ssm_winter_counts.png>]
+<img/shannon_index_summer.png, id=103, 526.96875pt x 325.215pt>
 File: img/shannon_index_summer.png Graphic file (type png)
 <use img/shannon_index_summer.png>
-Package pdftex.def Info: img/shannon_index_summer.png  used on input line 542.
+Package pdftex.def Info: img/shannon_index_summer.png  used on input line 557.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-<img/shannon_index_winter.png, id=100, 526.96875pt x 325.215pt>
+<img/shannon_index_winter.png, id=104, 526.96875pt x 325.215pt>
 File: img/shannon_index_winter.png Graphic file (type png)
 <use img/shannon_index_winter.png>
-Package pdftex.def Info: img/shannon_index_winter.png  used on input line 547.
+Package pdftex.def Info: img/shannon_index_winter.png  used on input line 562.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-[10 <./img/summer_lpi.png> <./img/winter_lpi.png>]
-<img/simpson_index_summer.png, id=108, 526.96875pt x 325.215pt>
+[11 <./img/summer_lpi.png> <./img/winter_lpi.png>]
+<img/simpson_index_summer.png, id=112, 526.96875pt x 325.215pt>
 File: img/simpson_index_summer.png Graphic file (type png)
 <use img/simpson_index_summer.png>
-Package pdftex.def Info: img/simpson_index_summer.png  used on input line 556.
+Package pdftex.def Info: img/simpson_index_summer.png  used on input line 571.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-<img/simpson_index_winter.png, id=109, 526.96875pt x 325.215pt>
+<img/simpson_index_winter.png, id=113, 526.96875pt x 325.215pt>
 File: img/simpson_index_winter.png Graphic file (type png)
 <use img/simpson_index_winter.png>
-Package pdftex.def Info: img/simpson_index_winter.png  used on input line 561.
+Package pdftex.def Info: img/simpson_index_winter.png  used on input line 576.
 (pdftex.def)             Requested size: 331.13168pt x 204.35556pt.
-[11 <./img/shannon_index_summer.png> <./img/shannon_index_winter.png>] [12 <./img/simpson_index_summer.png> <./img/simpson_index_winter.png>] [13] [14] [15] [16]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 789.
+[12 <./img/shannon_index_summer.png> <./img/shannon_index_winter.png>] [13 <./img/simpson_index_summer.png> <./img/simpson_index_winter.png>] [14] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 796.
 (c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [17{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] 
+) [18{c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./barberspan_ssm_report.aux)
  ***********
@@ -593,18 +593,18 @@ L3 programming layer <2024-05-08>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13870 strings out of 475952
- 223842 string characters out of 5788423
+ 13863 strings out of 475952
+ 223739 string characters out of 5788423
  1937907 words of memory out of 5000000
- 35794 multiletter control sequences out of 15000+600000
+ 35790 multiletter control sequences out of 15000+600000
  612017 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  89i,8n,93p,1483b,478s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/GEdwards/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on barberspan_ssm_report.pdf (17 pages, 432496 bytes).
+Output written on barberspan_ssm_report.pdf (18 pages, 432419 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 89 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

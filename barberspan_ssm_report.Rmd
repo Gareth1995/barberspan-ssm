@@ -51,7 +51,11 @@ Gareth R. Edwards, Res Altwegg, Birgit Erni
 &nbsp;
 
 ## Summary {-}
-A summary will go here
+This study applies state-space time series analysis to waterbird species in the Barberspan wetland, South Africa, with the objective of developing effective bioindicators for monitoring biodiversity. Waterbird counts from 1993 to 2018 were analyzed using state-space models (SSMs) to account for observation errors and missing data. These models allowed for more accurate estimation of population trends by separating true population dynamics from observation noise.
+
+Using posterior distributions generated from the SSM, we calculated several biodiversity indices, including a modified Living Planet Index (LPI), Shannon Index, and Simpson Index, to assess changes in species abundance, community evenness, and overall biodiversity over time.
+
+The results demonstrate the utility of state-space models in tracking waterbird populations, offering a framework for using bird species as bioindicators to inform wetland conservation efforts.
 
 ### Introduction {-}
 With the ongoing concern about biodiversity loss, monitoring biodiversity at various levels of biological organisation is important [@pereira2013essential]. At the organismal level, biodiversity is generally measured by three components: number of species, total number of individuals (abundance), and how the individuals are distributed across species (evenness). We lose biodiversity if abundance decreases, if species go extinct, if communities become dominated by a few common species, or a combination of these processes. To measure changes in biodiversity, we need indicators that are sensitive to changes in these components [@bucklandMonitoringChangeBiodiversity2005; @buckland2017measuring]. 
@@ -275,8 +279,6 @@ While our findings demonstrate the utility of state-space models in assessing bi
 
 In conclusion, the state-space time series model proves to be a powerful tool in the analysis of bird abundance, offering detailed insights and reliable index values that can inform conservation strategies. As we continue to refine these models and expand their use, we enhance our ability to protect and preserve vital wetland ecosystems for future generations.
 
-### Supplementary Material {-}
 
-### Acknowledgments {-}
 \newpage
 ### References {-}
