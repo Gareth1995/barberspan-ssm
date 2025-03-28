@@ -50,8 +50,17 @@ Gareth R. Edwards, Res Altwegg, Birgit Erni
 &nbsp;
 &nbsp;
 
+
+??? Title should be more about the indices, state-space models are more of a 
+tool used
+
+
 ## Summary {-}
-A summary will go here
+This study applies state-space time series analysis to waterbird species in the Barberspan wetland, South Africa, with the objective of developing effective bioindicators for monitoring biodiversity. Waterbird counts from 1993 to 2018 were analyzed using state-space models (SSMs) to account for observation errors and missing data. These models allowed for more accurate estimation of population trends by separating true population dynamics from observation noise.
+
+Using posterior distributions generated from the SSM, we calculated several biodiversity indices, including a modified Living Planet Index (LPI), Shannon Index, and Simpson Index, to assess changes in species abundance, community evenness, and overall biodiversity over time.
+
+The results demonstrate the utility of state-space models in tracking waterbird populations, offering a framework for using bird species as bioindicators to inform wetland conservation efforts.
 
 ### Introduction {-}
 With the ongoing concern about biodiversity loss, monitoring biodiversity at various levels of biological organisation is important [@pereira2013essential]. At the organismal level, biodiversity is generally measured by three components: number of species, total number of individuals (abundance), and how the individuals are distributed across species (evenness). We lose biodiversity if abundance decreases, if species go extinct, if communities become dominated by a few common species, or a combination of these processes. To measure changes in biodiversity, we need indicators that are sensitive to changes in these components [@bucklandMonitoringChangeBiodiversity2005; @buckland2017measuring]. 
@@ -65,26 +74,52 @@ By varying the free parameter $q$, the Hill numbers are species richness for $q 
 
 When estimating trends in biodiversity, it is important to take into account the observation process that has given rise to the data. In most situations, it is impossible to census wild populations completely. We would like to know the number of individuals of species $i$, i.e. $n_{i,t}$, that is present in a population in year $t$. Instead, we obtain a count $c_{i,t}$ that is related to $n_{i,t}$ as $c_{i,t} = n_{i,t} \times p_{i,t}$ where $p_{i,t}$ is a detection rate. The observation process has three effects on the observed counts. 1) since $p_{i,t}$ usually varies because of variable conditions like weather, visibility, observer skills, characteristics of a species, etc., the counts are more variable than the actual population sizes [@link1994importance]. 2) The $p_{i,t}$ vary because some individuals escape detection and others might be double counted. Often, non-detection is a bigger issue than double counting and so the $p_{i,t}$ tend to be $<1$. As a result, the raw counts tend to underestimate the true population sizes. 3) Sometimes, surveys are missed altogether, leading to $p_{i,t} = 0$ for all species in a particular year $t$.
 
-Here, we explore trends in waterbird populations at a particular wetland, Barberspan, in South Africa. Waterbirds are an important component of biodiversity in wetlands and also often serve as indicators for the condition of their environment [@amatWaterbirdsBioindicatorsEnvironmental2010; @gregoryWildBirdIndicators2010; @sekerciogluIncreasingAwarenessAvian2006], such as the level of eutrophication of wetlands [@amatWaterbirdsBioindicatorsEnvironmental2010]. Waterbids are also notoriously difficult to count as they tend to flock and can uncooperatively fly around during surveys. The waterbirds at Barberspan have been counted twice per year, in mid winter and mid-summer, since 1993. However, as is often the case in long-term monitoring programmes, counts were not always carried out an the time series therefore contain gaps. We therefore estimate population sizes and their trends using state-space models to reduce the effect of the observation process [@auger-metheGuideStatespaceModeling2021]. We then calculate indices for biodiversity change by aggregating population trends and using biodiversity indicators.
+Here, we explore trends in waterbird populations at a particular wetland, Barberspan, in South Africa. Waterbirds are an important component of biodiversity in wetlands and also often serve as indicators for the condition of their environment [@amatWaterbirdsBioindicatorsEnvironmental2010; @gregoryWildBirdIndicators2010; @sekerciogluIncreasingAwarenessAvian2006], such as the level of eutrophication of wetlands [@amatWaterbirdsBioindicatorsEnvironmental2010]. Waterbids are also notoriously difficult to count as they tend to flock and can uncoo.peratively fly around during surveys. The waterbirds at Barberspan have been counted twice per year, in mid winter and mid-summer, since 1993. However, as is often the case in long-term monitoring programmes, counts were not always carried out and the time series therefore contain gaps. We therefore estimate population sizes and their trends using state-space models to reduce the effect of the observation process [@auger-metheGuideStatespaceModeling2021]. We then calculate indices for biodiversity change by aggregating population trends and using biodiversity indicators.
+
+ToDo:
+- why Barberspan?   RAMSAR site
+
+- part of bigger plan?
+- identify suitable indicator?
+- separate paragraph for SSM, why SSM
 
 ### Methods {-}
 #### Study Area {-}
 
-The bird counts used in this study come from the Barberspan wetland which is the pilot site for this study. The Barberspan wetland is situated in North West province, South Africa. It is a protected wetland site known as Barberspan Bird Sanctuary that covers a 3200ha area. The wetland is centered on a shallow lake which covers approximately 257ha to 2000ha depending on rain fall [@remisiewiczStatusMigrantResident2011].
+The bird counts used in this study come from the Barberspan wetland (add rough coordinates). The Barberspan wetland is situated in North West province, South Africa. It is a protected wetland site known as Barberspan Bird Sanctuary that covers a 3200ha area. The wetland is centered on a shallow lake which covers approximately 257ha to 2000ha depending on rain fall [@remisiewiczStatusMigrantResident2011].
 
-RAMSAR reports that the Barberspan wetland regularly supports approximately 20000 waterbirds with 365 different bird species [@rothmannjBarberspan2015]. Barberspan is one of the first RAMSAR sites in South Africa and the only RAMSAR site in North West province. 
+RAMSAR reports that the Barberspan wetland regularly supports approximately 20000 waterbirds with 365 different bird species [@rothmannjBarberspan2015]. Barberspan was one of the first RAMSAR sites in South Africa and the only RAMSAR site in North West province. 
 
-Barberspan wetland is home to thousands of Little Stints and Curlew Sandpipers. It's also a popular location for intra-African nomadic waders such as Kittlitz's Plover and Crowned Lapwing. The bird species with the highest abundance in Barperspan wetland is the Red-Knobbed Coot, Egyptian Goose, Yellow Billed Duck, Southern Pochard and the South African Shelduck [@remisiewiczStatusMigrantResident2011]. Appendix A contains further information regarding the waterbirds found in Barberspan wetland that was used in this study. The Barberspan wetland is rich in bird data and thus is an ideal wetland to use as a pilot site for this study.
+During the austral summer ???, Barberspan wetland is home to thousands of Little Stints and Curlew Sandpipers. It also attracts intra-African nomadic waders such as Kittlitz's Plover and Crowned Lapwing. The bird species with the highest abundance in Barperspan wetland are: Red-Knobbed Coot, Egyptian Goose, Yellow Billed Duck, Southern Pochard and South African Shelduck [@remisiewiczStatusMigrantResident2011]. Appendix A contains further information regarding the waterbirds found in Barberspan wetland and were used in this study. 
 
-#### Exploratory Data Analysis {-}
-The data used in this paper is from the Coordinated Waterbird Counts (CWAC) initiative. The counts are conducted twice a year, once in January/February (austral
-summer) and once in June/July (austral winter). The counting procedure is standardised and follows a rigorous set of instructions that counters are to follow. The counting protocol is such that all counts take place at approximately the same time each day, when the sun is either behind or beside the counter. More details about the counting process can be found at the following link (https://cwac.birdmap.africa/).
+ToDo: write a bit more about climate, when rainfall season, how much rain, types of habitat surroundings
 
-The CWAC dataset contains bird counts from 1993 to 2013 for the Barberspan wetland. Missing counts were inserted into the dataset as missing values that will subsequently be predicted by the state-space time series model. Only birds with 15 or more non-zero counts were used in the analysis as the variance parameters for the state-space time series model didn't converge when applied to bird counts with fewer than 15 non-zero counts.
+
+
+#### Waterbird Count Data  {-}
+The data used in this paper are from the Coordinated Waterbird Counts (CWAC) initiative (add website). The counts are conducted twice a year, once in January/February (austral
+summer) and once in June/July (austral winter). The counting procedure is standardised and follows a rigorous set of instructions that counters are to follow. The counting protocol is such that all counts take place at approximately the same time of day, when the sun is either behind or beside the counter (????). More details about the counting process can be found at <https://cwac.birdmap.africa/>.
+
+The CWAC dataset contains bird counts from 1993 to 2013 (can we use later counts ????) for the Barberspan wetland. Only birds with 15 or more non-zero counts were used in the analysis as the variance parameters for the state-space time series model didn't converge when applied to bird counts with fewer than 15 non-zero counts.
+
+
+Todo:
+- how many count occasions
+- how many missing
+- 18 summer counts, 13 winter counts
 
 #### State-Space Time Series Model {-}
 
-A state-space time series model (SSM) was fitted to the bird count data. State-space models have become increasingly popular tools in modelling population dynamics [@auger-metheGuideStatespaceModeling2021]. The key benefit of a state-space model is its ability to separate observation error and latent error. By removing the observation error from the latent error, one is able to predict population trends more accurately [@keryBayesianPopulationAnalysis2011a]. SSMs are an ideal tool to use for time series analysis for the CWAC dataset, as bird counts are often prone to high levels of observation error and follow a markovian process, where the value at time t is dependent on the value at time t-1 (see figure 1 for illustration of markovian chain).
+State-space models have become increasingly popular tools in modelling population dynamics [@auger-metheGuideStatespaceModeling2021]. The key benefit of a state-space model is its ability to separate observation error and latent error. By removing the observation error from the latent error, one is able to predict population trends more accurately [@keryBayesianPopulationAnalysis2011a]. SSMs are an ideal tool to use for time series analysis for the CWAC dataset, as bird counts are often prone to high levels of observation error and follow a Markovian process, where the value at time $t$ is dependent on the value at time $t-1$ (see \ref{fig:ssm-illustration} for illustration of Markov chain).
+
+
+Todo: 
+- I think we can skip this figure ??
+- add references to TRIM, Rtrim (also state-space models)
+- move above paragraph to intro, as justification for state-space model, approach
+- explain log(count + 1)
+- are the winter counts used at all? do they add information? add precision to estimates? if not, leave out?
+
 
 \vspace{1cm}
 
@@ -92,11 +127,15 @@ A state-space time series model (SSM) was fitted to the bird count data. State-s
   \centering
   \includegraphics[width=10cm]{img/The-state-space-model.png}
   \caption{A visual representation of a state space model where $X_t$ represents the unobserved population level changes. SSMs use the observed population counts, $Y_t$, to estimate the population level changes.}
+  \label{fig:ssm-illustration}
 \end{figure}
 
-In this study the CWAC bird counts are modeled using an existing state-space time series model that was created by @barshepIdentifyingEcologicalLifehistory2017 and applied to bird count data in the CWAC dataset. @barshepIdentifyingEcologicalLifehistory2017 developed a bivariate time series model that treats summer and winter counts as separate variables, with the focus being on the summer population. The winter counts are modeled as a proportion of the summer counts as some birds from Barberspan migrate north during the southern winter.
+The state-space model used in this study is based on that developed by @barshepIdentifyingEcologicalLifehistory2017 and applied to bird count data in the CWAC dataset. This is a bivariate time series model that treats summer and winter counts as two interdependent time series. 
 
-SSMs model the state process and observation process separately such that state error and observation error can be separated for more accurate modelling of the count data. The mathematical illustration of the bivariate model is displayed below:
+
+SSMs model the state process and observation process separately such that state error and observation error can be separated for more accurate modelling of the count data. 
+
+We fitted the following state-space model:
 
 _observation process_
 
@@ -109,11 +148,16 @@ _observation process_
   ln(winter\;count): w_{t} = \mu_{t} + \lambda_{t} + e_{t},\;\;\;e_{t} \sim N(0,\sigma^{2}_e)
 \end{equation}
 
+\textcolor{red}{code has -lambda for above equation}
+
+
 _state process_
 
 \begin{equation}
   ln(summer\;population\;level): \mu_{t} = \mu_{t-1} + \beta_{t-1} + w_{t}, \;\;\; w_{t} \sim N(0, \sigma^{2}_w)
 \end{equation}
+
+\textcolor{red}{code has -beta for above equation}
 
 \begin{equation}
   ln(population\;change): \beta_{t} = \beta_{t-1} + \zeta_{t}, \;\;\; \zeta_{t} \sim N(0, \sigma^{2}_\zeta)
@@ -123,26 +167,41 @@ _state process_
   ln(summer\;to\;winter\;ratio): \lambda_{t} = \lambda_{t-1} + \epsilon_{t}, \;\;\; \epsilon_{t} \sim N(0,\sigma^{2}_\epsilon)
 \end{equation}
 
-where, $s_{t}$ is the summer count at time $t$ and $w_{t}$ is the winter count at time $t$. $\mu_{t}$ is the latent summer population, $\beta_{t}$ is the rate of change at time $t$ and $\lambda$ is the winter to summer ratio. The winter to summer ratio refers to the difference in the bird population from summer to winter. The palearctic migrants usually migrate north for winter, and leave their young behind, thus leaving a smaller proportion of birds in the South African wetlands in winter compared to summer.  $\alpha_{t}$, $e_{t}$, $w_{t}$, $\zeta_{t}$ and $\epsilon_{t}$ are all normally distributed, serially independent and independent of each other with variance $\sigma^{2}_\alpha$, $\sigma^{2}_e$, $\sigma^{2}_w$, $\sigma^{2}_\zeta$ and $\sigma^{2}_\epsilon$ respectively.
+where, $s_{t}$ is the summer count at time $t$ and $w_{t}$ is the winter count at time $t$. $\mu_{t}$ is the latent summer population, $\beta_{t}$ is the rate of change at time $t$ and $\lambda_t$ is the winter to summer ratio. The winter to summer ratio refers to the difference in the bird population from summer to winter. Palearctic migrants usually migrate north before the austral winter. However, many of young birds stay behind, thus leaving a smaller proportion of birds in the South African wetlands in winter compared to summer.  
 
-The time series model presented above follows a Markovian process as the value at time t is dependent on the value at time t-1. The aim of this analysis is to sample from the probability distributions that represent the summer and winter counts. The current distribution for these summer and winter counts are unknown, but by applying Monte Carlo simulations from the summer and winter count distributions we can generate values that are from an approximation of the true count distribution (the stationery distribution). This process is known as a Monte Carlo Markov Chain (MCMC) approach [@brooksHandbookMarkovChain2011]. The simulated values are known as the posterior distribution and is later used to calculate bio indices with credible intervals.
 
-In this analysis the MCMC algorithm used is the Gibbs Sampler, which is applied using the JAGS package in R [@plummerJAGSProgramAnalysis2003; @R; @jagsui]. The JAGS software implements Bayesian inference based on Gibbs sampling by using a MCMC approach [@coroGibbsSamplingJAGS2017]. The hyperparameters available in the JAGS program are number of chains (n.chains), number of iterations (n.iter) and burn-in length (n.burnin). The number of chains refers to the number of markov chains created. These are the number of chains that run in parallel which converge to form the stationery distribution. A trace plot can also be plotted to show if these chains converge or not for a given summer count value. If all chains converge around the same approximation then we can be satisfied that the model has reached convergence. The number of chains was set to three in this analysis. The hyperparameters for number of iterations and "burn-in" for the Gibbs Sampler was 10 000 and 5000 respectively. The number of iterations refers to the number of times the Gibbs Sampler samples from the stationery distribution that represents the summer or winter counts. The "burn-in" hyperparameter refers to the first few iterations that are to be discarded given that these first few iterations are usually less probable outcomes, but as the model runs for a longer period of iterations, the outcomes tend toward a higher probability region and thus are more likely outcomes [@keryBayesianPopulationAnalysis2011a]. This generates an output of 15 000 count values for each bird for each year with the first 5000 iterations being the "burn-in" iterations.
+\textcolor{red}{this model was originally used in Simmons et al??}
+
+\textcolor{red}{the majority of birds at Barberspan are not actually migrants, especially not the common ones. Then does this summer-winter ssm make sense? Maybe okay if there is a difference between summer and winter, for whatever reason?}
+
+\textcolor{red}{from indicator perspective: are the winter counts interesting at all? contribute any information?}
+
+We assume that the error terms $\alpha_{t}$, $e_{t}$, $w_{t}$, $\zeta_{t}$ and $\epsilon_{t}$ are all normally distributed, serially independent and independent of each other with variances $\sigma^{2}_\alpha$, $\sigma^{2}_e$, $\sigma^{2}_w$, $\sigma^{2}_\zeta$ and $\sigma^{2}_\epsilon$, respectively.
+
+To account for species that leave the area during the austral winter, winter counts are modelled as a proportion of the previous summer count. 
+
+We fitted the above model using a Bayesian approach, implemented using Gibbs sampling in JAGS through R [@plummerJAGSProgramAnalysis2003; @R; @jagsui; @coroGibbsSamplingJAGS2017]. We used three chains, of length 10000, 5000 burnin samples. 
+
+obtain posterior distribution for .... which important values that will be extracted??
+
 
 #### Biodiversity indices {-}
 
-The 10 000 approximated count values for each bird count per year was used in calculating the modified LPI, exponentiated Shannon index and the Simpson index. The benefit of using the whole posterior sample of bird counts is so that a credible interval could be calculated for each index.
 
-A popular population abundance index is the Living Planet Index (LPI) that is designed to track
+The Living Planet Index (LPI) can track
 changes in population sizes over time. The LPI is used as an aggregated abundance index. It
-calculates the percentage change from a reference year (1970) to all subsequent years. This is done by
+calculates the percentage change from a reference year (1970 \textcolor{red}{??? why 1970, we don't have the data for 1970 ???}) to all subsequent years. This is done by
 averaging the rate of change (from reference year to current year) across all species of a species group
 [@mcraeDiversityWeightedLivingPlanet2017].
 
-A modified LPI approach was used to form an abundance index in this study. The modified LPI used
-calculates percentage change from each year to the next for each bird type in Barberspan and then calculates the average for that year. This is unlike the standard LPI approach that calculates the rate of change of species for each year based on the reference year (1970).
+\textcolor{red}{??? if this study doesn't use the original LPI, then don't call it LPI}
 
-The modified LPI calculations are displayed as follows:
+\textcolor{red}{rather call it something else, e.g. average rate of change or average population change per group or for species i}
+
+
+\textcolor{red}{is this an abundance index? seems more like a population change index}
+
+For each year and every species (or group of species) we calculated the percentage change in .... relative to the previous year. These changes were averaged over species. 
 
 \begin{equation}
   \overline{d_t}=\frac{1}{n_t}\sum_{i=1}^{n_t}d_{it}
@@ -156,8 +215,10 @@ where $\overline{d_t}$ is the average annual trend if there were multiple popula
 
 where $N_{t}$ refers to the population size during year t.
 
-The modified LPI calculations were applied to the summer population posterior values, for each
-year, estimated by the state-space model. The mean modified LPI was taken for each year and credible intervals were formed around that mean by calculating the 2.5th and 97.5th percentiles.
+The values for $N_t$ were extracted from the posterior sample obtained from the state-space model. 
+
+We extracted the mean, and 0.025 and 0.975 quantiles from this posterior distribution to obtain a mean and credible interval for the index. 
+
 
 The exponentiated Shannon index and the Simpson index was also used to calculate further aspects of biodiversity in Barberspan. Namely the evenness and effective number of bird species. This is calculated using the Simpson's index and exponentiated Shannon's index respectivley [@nagendraOppositeTrendsResponse2002]. The calculations for the Shannon's index and the Simpson's index is displayed as follows:
 
@@ -174,6 +235,13 @@ _Simpsons index_
 \begin{equation}
   x=\sum_{i=1}^Sp_i^2
 \end{equation}
+
+
+\textcolor{red}{explain how $p_i$ is related to values in posterior, is posterior needed here?, equation}
+
+\textcolor{red}{Calculating these indices from the posterior distribution:}
+
+The 10 000 approximated count values for each bird count per year was used in calculating the modified LPI, exponentiated Shannon index and the Simpson index. 
 
 The Shannon and Simpson index were applied to the posterior values generated from the Gibbs sampler in similar manner as the modified LPI calculations. An exponentiated Shannon and Simpson index was calculated per year, using all 10 000 posterior count values for each bird species for that year. Thus creating 10 000 index values for each year. The mean index value was taken for both Shannon and Simpson values and the 2.5th and 97.5th percentiles were calculated to form the credible intervals.
 
@@ -193,6 +261,8 @@ The combined bird counts of Barberspan from 1993 to 2018 are plotted in figure 2
   \caption{Top ten most abundant bird types in Barberspan wetland}
 \end{figure}
 
+\textcolor{red}{skip this plot, information is already in table, or add proportions to table}
+
 A state-space time series model was fit to the combined bird counts of the Barberspan wetland using the JAGS (Just Another Gibbs Sampler) package. The model was fit on the summer and winter counts separately. The output is posterior distributions for summer and winter counts for each year. The state-space time series model output is displayed in figure 4.
 
 \begin{figure}[H]
@@ -208,6 +278,13 @@ A state-space time series model was fit to the combined bird counts of the Barbe
   \end{subfigure}
   \caption{State-space time series output applied to the combined bird counts, separated by season, of Barberspan wetland. The grey area surrounding the dotted line is the 95\% credible interval around the population level produced by the MCMC output.}
 \end{figure}
+
+
+\textcolor{red}{would it make sense to add horizontal reference lines, e.g. overall mean, early mean. Then one can see at any point whether the values are different to that reference level. Could add the actual number (number of birds instead of log count)}
+
+\textcolor{red}{winter actually not needed for this paper? leave out? does it improve the estimates? if not, definitely leave out}
+
+\textcolor{red}{make plots simpler, fewer grid lines}
 
 From the 10 000 yearly count values generated from the Gibbs Sampler, we are able to calculate various bioindices. We demonstrate the benefits of using posterior output to calculate bioindices by calculating the LPI, exponentiated Shannon index and the Simpson index using the 10 000 yearly posterior values.
 
@@ -275,8 +352,6 @@ While our findings demonstrate the utility of state-space models in assessing bi
 
 In conclusion, the state-space time series model proves to be a powerful tool in the analysis of bird abundance, offering detailed insights and reliable index values that can inform conservation strategies. As we continue to refine these models and expand their use, we enhance our ability to protect and preserve vital wetland ecosystems for future generations.
 
-### Supplementary Material {-}
 
-### Acknowledgments {-}
 \newpage
 ### References {-}
